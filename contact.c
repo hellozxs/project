@@ -241,43 +241,43 @@ void mod(Con *con)
       scanf("%s", con->per[i].addr);
       printf("\nModify contact successful !\n\n");
       system("pause");
-    return;
+      return;
+   }
   }
-}
-if (i == con->size)
-{
-printf("\nThe contact name not found !\n\n");
-system("pause");
-}
+  if (i == con->size)
+  {
+    printf("\nThe contact name not found !\n\n");
+    system("pause");
+  }
 }
 
 //清空联系人
 void empty(Con *con)
 {
-con->size = 0;
-printf("The contact has been cleared !\n\n");
-system("pause");
+  con->size = 0;
+  printf("The contact has been cleared !\n\n");
+  system("pause");
 }
 
 //排序联系人
 void sort(Con *con)
 {
-void my_memswap();
-int i = 0, j = 0;
-for (j = 0; j < con->size - 1; j++)
-{
-for (i = 0; i < con->size - 1 - j; i++)
-{
-if (strcmp(con->per[i].name, con->per[i + 1].name)>0)
-{
-Per tmp = con->per[i];
-con->per[i] = con->per[i + 1];
-con->per[i + 1] = tmp;
-//my_memswap(&(con->per[i]), &(con->per[i + 1]), sizeof(con->per[i]));
-}
-}
-}
-show(con);
+  void my_memswap();
+  int i = 0, j = 0;
+  for (j = 0; j < con->size - 1; j++)
+  {
+    for (i = 0; i < con->size - 1 - j; i++)
+    {
+      if (strcmp(con->per[i].name, con->per[i + 1].name)>0)
+      {
+        Per tmp = con->per[i];
+        con->per[i] = con->per[i + 1];
+        con->per[i + 1] = tmp;
+        //my_memswap(&(con->per[i]), &(con->per[i + 1]), sizeof(con->per[i]));
+      }
+    }
+  }
+  show(con);
 }
 
 //退出
@@ -289,14 +289,13 @@ void ExitContact(Con * con)
   scanf("%c", &ch);
   if (ch == 'n')
   {
-  
-     exit(EXIT_SUCCESS);
+    exit(EXIT_SUCCESS);
   }
-else
-{
-WriteContact(con);
-printf("The  contact has been saved !\n ");
-system("pause");
-exit(EXIT_SUCCESS);
-}
+  else
+  {
+    WriteContact(con);
+    printf("The  contact has been saved !\n ");
+    system("pause");
+    exit(EXIT_SUCCESS);
+  }
 }
