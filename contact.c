@@ -193,56 +193,56 @@ void del(Con *con)
 //查找联系人
 void  find(const Con *con)
 {
-char find_name[MAX_NAME];
-printf("\nPlease enter the contact name to find:>");
-scanf("%s", find_name);
-int i = 0;
-for (i = 0; i < con->size; i++)
-{
-if (strcmp(con->per[i].name, find_name) == 0)
-{
-head();
-printf("\n\t%10s\t%5s\t%5d\t%12s\t%15s\n\n",
-con->per[i].name,
-con->per[i].sex,
-con->per[i].age,
-con->per[i].tel,
-con->per[i].addr);
-system("pause");
-return;
-}
-}
-if (i == con->size)
-{
-printf("\nThe contact name not found!\n\n");
-}
-system("pause");
-return;
+  char find_name[MAX_NAME];
+  printf("\nPlease enter the contact name to find:>");
+  scanf("%s", find_name);
+  int i = 0;
+  for (i = 0; i < con->size; i++)
+  {
+    if (strcmp(con->per[i].name, find_name) == 0)
+    {
+      head();
+      printf("\n\t%10s\t%5s\t%5d\t%12s\t%15s\n\n",
+      con->per[i].name,
+      con->per[i].sex,
+      con->per[i].age,
+      con->per[i].tel,
+      con->per[i].addr);
+      system("pause");
+      return;
+    }
+  }
+  if (i == con->size)
+  {
+    printf("\nThe contact name not found!\n\n");
+  }
+  system("pause");
+  return;
 }
 
 //修改联系人
 void mod(Con *con)
 {
-char tmp_name[MAX_NAME];
-printf("\nPlease enter contact name to modify :>");
-scanf("%s", tmp_name);
-int i = 0;
-for (i = 0; i < con->size; i++)
-{
-if (strcmp(tmp_name, con->per[i].name) == 0)
-{
-printf("\nPlease enter sex:>");
-scanf("%s", con->per[i].sex);
-printf("\nPlease enter age:>");
-scanf("%d", &(con->per[i].age));
-printf("\nPlease enter telephone:>");
-scanf("%s", con->per[i].tel);
-printf("\nPlease enter address:>");
-scanf("%s", con->per[i].addr);
-printf("\nModify contact successful !\n\n");
-system("pause");
-return;
-}
+  char tmp_name[MAX_NAME];
+  printf("\nPlease enter contact name to modify :>");
+  scanf("%s", tmp_name);
+  int i = 0;
+  for (i = 0; i < con->size; i++)
+  {
+    if (strcmp(tmp_name, con->per[i].name) == 0)
+    {
+      printf("\nPlease enter sex:>");
+      scanf("%s", con->per[i].sex);
+      printf("\nPlease enter age:>");
+      scanf("%d", &(con->per[i].age));
+      printf("\nPlease enter telephone:>");
+      scanf("%s", con->per[i].tel);
+      printf("\nPlease enter address:>");
+      scanf("%s", con->per[i].addr);
+      printf("\nModify contact successful !\n\n");
+      system("pause");
+    return;
+  }
 }
 if (i == con->size)
 {
@@ -283,15 +283,15 @@ show(con);
 //退出
 void ExitContact(Con * con)
 {
-char ch = 0;
-printf("Do you want to save contact ?   y  or n :>");
-getchar();              //接受菜单中选择0之后按的回车键
-scanf("%c", &ch);
-if (ch == 'n')
-{
-
-exit(EXIT_SUCCESS);
-}
+  char ch = 0;
+  printf("Do you want to save contact ?   y  or n :>");
+  getchar();              //接受菜单中选择0之后按的回车键
+  scanf("%c", &ch);
+  if (ch == 'n')
+  {
+  
+     exit(EXIT_SUCCESS);
+  }
 else
 {
 WriteContact(con);
